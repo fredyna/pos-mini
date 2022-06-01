@@ -43,5 +43,5 @@
           stroke-linejoin="round"
         ></path>
       </svg> --}}
-    <img src="{{ asset('images/logo-kreafit.png') }}" alt="Logo" width="120">
+    <img src="{{ asset('favicon.png') }}" alt="Logo" width="50">
 </div>

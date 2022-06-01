@@ -1,91 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-:root {
-    --primary-color: #c83660;
-    --secondary-color: #fef2f6;
-    --yellow-color: #fb8c00;
-    --white-color: #ffffff;
-    --text-black: #1B252F;
-    --text-gray: #828282;
-    --text-gray-4: #BDBDBD;
-    --background-color: #f5f8fd;
-    --background-gray: #f0f0f0;
-    --black-color: #000000;
-}
-
-body {
-    font-family: "Poppins", sans-serif;
-}
-
-.text-bold-700{
-    font-weight: 700;
-}
-
-.text-bold-500 {
-    font-weight: 500;
-}
-
-.text-gray{
-    color: var(--text-gray-4);
-}
-
-.btn-primary{
-    background: linear-gradient(273.05deg, #C83660 0%, #EE75A4 100%);
-    border: 0;
-    border-radius: 28px;
-    padding: 10px 15px;
-    font-size: 1em;
-    line-height: 1.5em;
-}
-
-.btn-primary-sm {
-    background: linear-gradient(273.05deg, #C83660 0%, #EE75A4 100%);
-    border: 0;
-    border-radius: 28px;
-    padding: 8px 8px;
-    font-size: 1em;
-    line-height: 1.5em;
-}
-
-#main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item.selected>.sidebar-link,
-#main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item.selected>.sidebar-link{
-    background-color: transparent;
-}
-
-#main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav>ul>.sidebar-item>.sidebar-link.active,
-#main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav>ul>.sidebar-item>.sidebar-link.active{
-    color: var(--text-black)!important;
-}
-
-#main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item.selected>.sidebar-link .feather,
-#main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item.selected>.sidebar-link i,
-#main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item.selected>.sidebar-link .feather,
-#main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item.selected>.sidebar-link i{
-    color: var(--primary-color);
-}
-
-#main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link,
-#main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link{
-    color: var(--text-gray-4);
-}
-
-#main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link .feather,
-#main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link i,
-#main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link .feather,
-#main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul .sidebar-item .sidebar-link i{
-    color: var(--text-gray-4);
-}
-
 .scroll-sidebar {
     height: calc(100% - 10px);
 }
 
 #sidebarnav .sidebar-item #user-profile{
     padding-left: 15px;
-}
-
-.form-control{
-    border: 1px solid #fff;
 }
 
 .form-control:focus{

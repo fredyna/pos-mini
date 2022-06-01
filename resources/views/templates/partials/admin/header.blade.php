@@ -10,7 +10,7 @@
     <meta name="robots" content="noindex,nofollow" />
     <title>{{ env('APP_NAME') }}</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/logo-kreafit.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon.png') }}" />
     <link href="{{ asset('vendor/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet" />
     <link rel="stylesheet" type="text/css"
         href="{{ asset('vendor/datatables.net-bs4/css/responsive.dataTables.min.css') }}" />

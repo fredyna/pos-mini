@@ -14,11 +14,11 @@
                                     class="ri-home-3-line fs-5"></i></a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
-                            Data Role
+                            Kategori Produk
                         </li>
                     </ol>
                 </nav>
-                <h1 class="mb-0 fw-bold">Data Role</h1>
+                <h1 class="mb-0 fw-bold">Data Kategori Produk</h1>
             </div>
             <div
                 class="
@@ -27,7 +27,7 @@
             align-items-center
             justify-content-end
             ">
-                <a href="{{ route('role.create') }}" class="btn btn-info d-flex align-items-center ms-2">
+                <a href="{{ route('kategori-produk.create') }}" class="btn btn-info d-flex align-items-center ms-2">
                     <i class="ri-add-line me-1"></i>
                     Tambah Baru
                 </a>
@@ -49,23 +49,21 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="tabel-data" class="table customize-table mb-0 v-middle text-nowrap">
+                            <table id="tabel-data" class="table customize-table mb-0 v-middle text-nowrap" width="100%">
                                 <thead class="bg-info text-white">
                                     <tr>
-                                        <th class="border-bottom border-top">NO</th>
-                                        <th class="border-bottom border-top">ROLE NAME</th>
-                                        <th class="border-bottom border-top">GUARD NAME</th>
-                                        <th class="border-bottom border-top">AKSI</th>
+                                        <th class="border-bottom border-top" width="10%">#</th>
+                                        <th class="border-bottom border-top">NAMA KATEGORI</th>
+                                        <th class="border-bottom border-top text-center" width="10%">AKSI</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @php $no = 1; @endphp
-                                    @forelse ($roles as $item)
+                                    @forelse ($categories as $item)
                                         <tr>
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $item->name }}</td>
-                                            <td>{{ $item->guard_name }}</td>
-                                            <td>
+                                            <td class="text-center">
                                                 <div class="dropdown dropstart">
                                                     <a href="#" class="link" id="dropdownMenuButton"
                                                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -81,7 +79,7 @@
                                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                         <li>
                                                             <a class="dropdown-item"
-                                                                href="{{ route('role.edit', $item->id) }}">Edit</a>
+                                                                href="{{ route('kategori-produk.edit', $item->id) }}">Edit</a>
                                                         </li>
                                                         <li>
                                                             <a class="dropdown-item" href="javascript:void(0)"
@@ -90,8 +88,8 @@
                                                     </ul>
 
                                                     <form id="data-{{ $item->id }}"
-                                                        action="{{ route('role.destroy', $item->id) }}" method="post"
-                                                        style="display:none;">
+                                                        action="{{ route('kategori-produk.destroy', $item->id) }}"
+                                                        method="post" style="display:none;">
                                                         @csrf
                                                         @method('DELETE')
                                                     </form>
@@ -101,7 +99,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="4" class="text-center">Tidak ada data</td>
+                                            <td colspan="3" class="text-center">Tidak ada data</td>
                                         </tr>
                                     @endforelse
                                 </tbody>
@@ -123,11 +121,8 @@
 @section('myjs')
     <script>
         $(function() {
-            $("#menu-master").attr('selected', true);
-            $("#menu-master > a").addClass('active');
-            $("#menu-master ul").addClass('in');
-            $("#menu-master-role").addClass('active');
-            $("#menu-master-role a").addClass('active');
+            $("#menu-product-category").addClass('active');
+            $("#menu-product-category a").addClass('active');
             $("#tabel-data").DataTable({
                 responsive: true,
             });

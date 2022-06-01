@@ -21,13 +21,5 @@ class UserSeeder extends Seeder
                 'updated_at'    => Carbon::now()
             ],
         ]);
-
-        DB::table('model_has_roles')->insert([
-            [
-                'role_id'        => 1,
-                'model_type'     => 'App\Models\User',
-                'model_id'       => 1
-            ],
-        ]);
     }
 }

@@ -11,72 +11,35 @@
                     <div id="user-profile">
                         <img class="img-fluid mb-3" src="{{ asset('admin/images/users/user.png') }}" width="60"
                             alt="User">
-                        <h5 class="text-bold-700">{{ Auth::user()->name }}</h5>
-                        <p class="text-gray">{{ Auth::user()->getRoleNames()[0] }}</p>
+                        <h5 class="text-bold-700 mb-4">{{ ucwords(strtolower(Auth::user()->name)) }}</h5>
                     </div>
                 </li>
-                @role('admin')
-                    <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('dashboard') }}"
-                            aria-expanded="false"><i data-feather="pie-chart"></i><span
-                                class="hide-menu">Dashboard</span></a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a id="menu-user" class="sidebar-link waves-effect waves-dark sidebar-link"
-                            href="{{ route('user.index') }}" aria-expanded="false"><i data-feather="users"></i><span
-                                class="hide-menu">Data User</span></a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a id="menu-templates" class="sidebar-link waves-effect waves-dark sidebar-link"
-                            href="{{ route('invitation-templates.index') }}" aria-expanded="false"><i
-                                data-feather="layout"></i><span class="hide-menu">Template Undangan</span></a>
-                    </li>
-                    <li id="menu-master" class="sidebar-item">
-                        <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)"
-                            aria-expanded="false"><i data-feather="database"></i><span class="hide-menu">Data
-                                Master</span></a>
-                        <ul aria-expanded="false" class="collapse first-level">
-                            <li id="menu-master-role" class="sidebar-item">
-                                <a href="{{ route('role.index') }}" class="sidebar-link"><i
-                                        class="ri-arrow-right-s-line"></i><span class="hide-menu"> Role</span></a>
-                            </li>
-                            <li id="menu-master-permission" class="sidebar-item">
-                                <a href="{{ route('permission.index') }}" class="sidebar-link"><i
-                                        class="ri-arrow-right-s-line"></i><span class="hide-menu">
-                                        Permission</span></a>
-                            </li>
-                            <li id="menu-master-role-permission" class="sidebar-item">
-                                <a href="{{ route('role-permission.index') }}" class="sidebar-link"><i
-                                        class="ri-arrow-right-s-line"></i><span class="hide-menu"> Role
-                                        Permission</span></a>
-                            </li>
-                            <li id="menu-master-paket-undangan" class="sidebar-item">
-                                <a href="{{ route('invitation-packet.index') }}" class="sidebar-link"><i
-                                        class="ri-arrow-right-s-line"></i><span class="hide-menu"> Paket
-                                        Undangan</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                @endrole
-                @role('member')
-                    <li id="menu-project" class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('project.index') }}"
-                            aria-expanded="false"><i data-feather="briefcase"></i><span class="hide-menu">Project
-                                Saya</span></a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i
-                                data-feather="list"></i><span class="hide-menu">Pesanan Saya</span></a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i
-                                data-feather="headphones"></i><span class="hide-menu">Panduan Pengguna</span></a>
-                    </li>
-                @endrole
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('user-profile') }}"
-                        aria-expanded="false"><i data-feather="user-check"></i><span class="hide-menu">Profil
-                            Saya</span></a>
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('dashboard') }}"
+                        aria-expanded="false"><i data-feather="pie-chart"></i><span
+                            class="hide-menu">Dashboard</span></a>
+                </li>
+                <li class="sidebar-item">
+                    <a id="menu-product" class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
+                        aria-expanded="false"><i data-feather="grid"></i><span class="hide-menu">Data
+                            Produk</span></a>
+                </li>
+                <li class="sidebar-item">
+                    <a id="menu-product-category" class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{ route('kategori-produk.index') }}" aria-expanded="false"><i
+                            data-feather="tag"></i><span class="hide-menu">Kategori
+                            Produk</span></a>
+                </li>
+                <li class="sidebar-item">
+                    <a id="menu-logout" class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="javascript:void(0)" aria-expanded="false" onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();"><i
+                            data-feather="log-out"></i><span class="hide-menu">Keluar</span>
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </li>
             </ul>
         </nav>

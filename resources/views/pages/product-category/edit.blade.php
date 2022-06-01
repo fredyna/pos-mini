@@ -14,16 +14,16 @@
                                     class="ri-home-3-line fs-5"></i></a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="{{ route('role.index') }}" class="link">
-                                Data Role
+                            <a href="{{ route('kategori-produk.index') }}" class="link">
+                                Kategori Produk
                             </a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
-                            Edit Data
+                            Edit Kategori
                         </li>
                     </ol>
                 </nav>
-                <h1 class="mb-0 fw-bold">Edit Data Role</h1>
+                <h1 class="mb-0 fw-bold">Edit Kategori Produk</h1>
             </div>
             <div
                 class="
@@ -32,7 +32,7 @@
                 align-items-center
                 justify-content-end
                 ">
-                <a href="{{ route('role.index') }}" class="btn btn-light d-flex align-items-center ms-2">
+                <a href="{{ route('kategori-produk.index') }}" class="btn btn-light d-flex align-items-center ms-2">
                     <i class="ri-arrow-left-s-line me-1"></i>
                     Kembali
                 </a>
@@ -54,19 +54,21 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body border-bottom">
-                        <h4 class="card-title">Form Edit Role</h4>
+                        <h4 class="card-title">Form Edit Kategori</h4>
                     </div>
-                    <form class="form-horizontal" method="POST" action="{{ route('role.update', $role->id) }}">
+                    <form class="form-horizontal" method="POST"
+                        action="{{ route('kategori-produk.update', $category->id) }}">
                         @csrf
                         @method('PATCH')
 
                         <div class="card-body">
                             <div class="mb-3 row">
-                                <label for="ename" class="col-sm-3 text-end control-label col-form-label">Nama Role</label>
+                                <label for="name" class="col-sm-3 text-end control-label col-form-label">Nama
+                                    Kategori</label>
                                 <div class="col-sm-9">
                                     <input type="text"
                                         class="form-control @if ($errors->has('name')) 'is-invalid' @endif" id="name"
-                                        name="name" placeholder="Nama role" value="{{ $role->name }}" required>
+                                        name="name" placeholder="Nama kategori..." value="{{ $category->name }}" required>
 
                                     @if ($errors->has('name'))
                                         <p class="text-danger">{{ $errors->first('name') }}</p>
@@ -84,15 +86,6 @@
                                 waves-effect waves-light
                                 ">
                                     Simpan
-                                </button>
-                                <button type="reset"
-                                    class="
-                                btn btn-dark
-                                rounded-pill
-                                px-4
-                                waves-effect waves-light
-                                ">
-                                    Reset
                                 </button>
                             </div>
                         </div>
@@ -113,11 +106,8 @@
 @section('myjs')
     <script>
         $(function() {
-            $("#menu-master").attr('selected', true);
-            $("#menu-master > a").addClass('active');
-            $("#menu-master ul").addClass('in');
-            $("#menu-master-role").addClass('active');
-            $("#menu-master-role a").addClass('active');
+            $("#menu-product-category").addClass('active');
+            $("#menu-product-category a").addClass('active');
         });
     </script>
 @endsection

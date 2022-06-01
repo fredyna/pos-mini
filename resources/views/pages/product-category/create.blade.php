@@ -14,8 +14,8 @@
                                     class="ri-home-3-line fs-5"></i></a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="{{ route('role.index') }}" class="link">
-                                Data Role
+                            <a href="{{ route('kategori-produk.index') }}" class="link">
+                                Kategori Produk
                             </a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
@@ -23,7 +23,7 @@
                         </li>
                     </ol>
                 </nav>
-                <h1 class="mb-0 fw-bold">Tambah Role Baru</h1>
+                <h1 class="mb-0 fw-bold">Tambah Kategori Produk Baru</h1>
             </div>
             <div
                 class="
@@ -32,7 +32,7 @@
                 align-items-center
                 justify-content-end
                 ">
-                <a href="{{ route('role.index') }}" class="btn btn-light d-flex align-items-center ms-2">
+                <a href="{{ route('kategori-produk.index') }}" class="btn btn-light d-flex align-items-center ms-2">
                     <i class="ri-arrow-left-s-line me-1"></i>
                     Kembali
                 </a>
@@ -54,18 +54,19 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body border-bottom">
-                        <h4 class="card-title">Form Role Baru</h4>
+                        <h4 class="card-title">Form Kategori Baru</h4>
                     </div>
-                    <form class="form-horizontal" method="POST" action="{{ route('role.store') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('kategori-produk.store') }}">
                         @csrf
 
                         <div class="card-body">
                             <div class="mb-3 row">
-                                <label for="name" class="col-sm-3 text-end control-label col-form-label">Nama Role</label>
+                                <label for="name" class="col-sm-3 text-end control-label col-form-label">Nama
+                                    Kategori</label>
                                 <div class="col-sm-9">
                                     <input type="text"
                                         class="form-control @if ($errors->has('name')) 'is-invalid' @endif" id="name"
-                                        name="name" placeholder="Nama role" value="{{ old('name') }}" required>
+                                        name="name" placeholder="Nama kategori..." value="{{ old('name') }}" required>
 
                                     @if ($errors->has('name'))
                                         <p class="text-danger">{{ $errors->first('name') }}</p>
@@ -112,11 +113,8 @@
 @section('myjs')
     <script>
         $(function() {
-            $("#menu-master").attr('selected', true);
-            $("#menu-master > a").addClass('active');
-            $("#menu-master ul").addClass('in');
-            $("#menu-master-role").addClass('active');
-            $("#menu-master-role a").addClass('active');
+            $("#menu-product-category").addClass('active');
+            $("#menu-product-category a").addClass('active');
         });
     </script>
 @endsection

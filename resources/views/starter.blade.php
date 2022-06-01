@@ -10,15 +10,26 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 d-flex align-items-center">
                         <li class="breadcrumb-item">
-                            <a href="{{ route('dashboard') }}" class="link"><i
-                                    class="ri-home-3-line fs-5"></i></a>
+                            <a href="index.html" class="link"><i class="ri-home-3-line fs-5"></i></a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
-                            Dashboard
+                            Starter Page
                         </li>
                     </ol>
                 </nav>
-                <h1 class="mb-0 fw-bold">Dashboard Page</h1>
+                <h1 class="mb-0 fw-bold">Starter Page</h1>
+            </div>
+            <div
+                class="
+            col-lg-4 col-md-6
+            d-none d-md-flex
+            align-items-center
+            justify-content-end
+            ">
+                <a href="javascript:void(0)" class="btn btn-info d-flex align-items-center ms-2">
+                    <i class="ri-add-line me-1"></i>
+                    Add New
+                </a>
             </div>
         </div>
     </div>
@@ -36,7 +47,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        Selamat datang di halaman dashboard
+                        This is some text within a card block.
                     </div>
                 </div>
             </div>
