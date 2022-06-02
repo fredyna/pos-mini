@@ -2,7 +2,7 @@
 <!-- footer -->
 <!-- ============================================================= -->
 <footer class="footer text-center">
-    2022&copy; All Rights Reserved by Creative Space Box
+    2019 &copy; PT Majoo Teknologi Indonesia
 </footer>
 <!-- ============================================================= -->
 <!-- End footer -->

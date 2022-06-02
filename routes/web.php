@@ -11,6 +11,7 @@ use App\Http\Controllers\InvitationPacketController;
 use App\Http\Controllers\InvitationPacketFeatureController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProjectEventController;
 use App\Http\Controllers\RoleController;
@@ -38,6 +39,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/user', UserController::class);
     Route::resource('/kategori-produk', ProductCategoryController::class);
+    Route::get('/produk/json', [ProductController::class, 'product_json'])->name('produk.json');
+    Route::resource('/produk', ProductController::class);
 });
 
 Auth::routes();

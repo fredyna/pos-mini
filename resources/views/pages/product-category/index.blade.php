@@ -129,10 +129,21 @@
         });
 
         function hapusData(id) {
-            let y = confirm('Yakin mau dihapus ?');
-            if (y == true) {
-                $("#data-" + id).submit();
-            }
+            Swal.fire({
+                title: "Yakin mau dihapus?",
+                text: "Data akan segera dihapus setelah dilanjutkan!",
+                type: "warning",
+                icon: "warning",
+                showCancelButton: true,
+                cancelButtonText: "Batalkan",
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Ya, hapus!",
+            }).then((result) => {
+                if (result.value) {
+                    $("#data-" + id).submit();
+                }
+            });
         }
     </script>
 @endsection

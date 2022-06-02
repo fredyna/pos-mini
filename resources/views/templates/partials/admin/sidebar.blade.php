@@ -20,8 +20,9 @@
                             class="hide-menu">Dashboard</span></a>
                 </li>
                 <li class="sidebar-item">
-                    <a id="menu-product" class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
-                        aria-expanded="false"><i data-feather="grid"></i><span class="hide-menu">Data
+                    <a id="menu-product" class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{ route('produk.index') }}" aria-expanded="false"><i data-feather="grid"></i><span
+                            class="hide-menu">Data
                             Produk</span></a>
                 </li>
                 <li class="sidebar-item">

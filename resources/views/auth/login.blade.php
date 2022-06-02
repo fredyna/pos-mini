@@ -88,15 +88,6 @@
                                         </button>
                                     </div>
                                 </div>
-
-                                <div class="form-group text-center">
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link text-center" href="{{ route('password.request') }}">
-                                            {{ __('Lupa Password?') }}
-                                        </a>
-                                    @endif
-                                </div>
-
                             </form>
                         </div>
                     </div>

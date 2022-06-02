@@ -62,18 +62,17 @@
                         @method('PATCH')
 
                         <div class="card-body">
-                            <div class="mb-3 row">
-                                <label for="name" class="col-sm-3 text-end control-label col-form-label">Nama
-                                    Kategori</label>
-                                <div class="col-sm-9">
-                                    <input type="text"
-                                        class="form-control @if ($errors->has('name')) 'is-invalid' @endif" id="name"
-                                        name="name" placeholder="Nama kategori..." value="{{ $category->name }}" required>
+                            <div class="input-group mb-3">
+                                <input type="text" name="name"
+                                    class="form-control @if ($errors->has('name')) 'is-invalid' @endif"
+                                    placeholder="Masukan nama kategori..." value="{{ $category->name }}" required>
 
-                                    @if ($errors->has('name'))
-                                        <p class="text-danger">{{ $errors->first('name') }}</p>
-                                    @endif
-                                </div>
+                                <span class="input-group-text"><i data-feather="file-text"
+                                        class="feather-sm fill-white"></i></span>
+
+                                @if ($errors->has('name'))
+                                    <p class="text-danger">{{ $errors->first('name') }}</p>
+                                @endif
                             </div>
                         </div>
                         <div class="p-3 border-top">
