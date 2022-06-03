@@ -245,10 +245,9 @@
                     toastr.error(`Gagal simpan data. Error : ${error.message}`);
                 })
                 .finally(() => {
-                    progress_bar.style.width = `0%`;
-                    progress_bar.textContent = `Loading 0%`;
-                    progress.classList.add("d-none");
-                    button_form.classList.remove("d-none");
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2500);
                 });
         }
     </script>
