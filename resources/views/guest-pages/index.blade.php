@@ -64,6 +64,9 @@
                     </div>
                 </div>
             @empty
+                <div class="col-12">
+                    <p class="text-center">Tidak ada data</p>
+                </div>
             @endforelse
         </div>
 
