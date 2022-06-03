@@ -130,11 +130,11 @@
                         </div>
 
                         <div class="p-4 border-top">
-                            <div class="progress mt-4 d-none" style="height: 10px;">
-                                <div class="progress-bar bg-success" style="width: 75%;" role="progressbar">75%</div>
+                            <div class="progress mt-2 mb-2 d-none" style="height: 20px;">
+                                <div class="progress-bar bg-success" style="width: 0%;" role="progressbar">Loading 0%</div>
                             </div>
 
-                            <div class="text-end">
+                            <div id="button-form" class="text-end">
                                 <button type="submit"
                                     class="
                                 btn btn-info
@@ -214,12 +214,20 @@
         function saveProduct() {
             let url = `{{ route('produk.store') }}`;
 
+            let progress = document.querySelector(".progress");
+            let progress_bar = document.querySelector(".progress-bar");
+            let button_form = document.querySelector("#button-form");
+            button_form.classList.add("d-none");
+            progress.classList.remove("d-none");
+
             const form = document.querySelector("#product-form");
             const formData = new FormData(form);
 
             const config = {
                 onUploadProgress(progressEvent) {
-                    console.log((progressEvent.loaded / progressEvent.total) * 100);
+                    let progress_result = (progressEvent.loaded / progressEvent.total) * 100;
+                    progress_bar.style.width = `${progress_result}%`;
+                    progress_bar.textContent = `Loading ${progress_result}%`;
                 },
                 headers: {
                     "Content-Type": "multipart/form-data",
@@ -244,6 +252,12 @@
                 })
                 .catch(function(error) {
                     toastr.error(`Gagal simpan data. Error : ${error.message}`);
+                })
+                .finally(() => {
+                    progress_bar.style.width = `0%`;
+                    progress_bar.textContent = `Loading 0%`;
+                    progress.classList.add("d-none");
+                    button_form.classList.remove("d-none");
                 });
         }
     </script>

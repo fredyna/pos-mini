@@ -18,7 +18,7 @@
                         </li>
                     </ol>
                 </nav>
-                <h1 class="mb-0 fw-bold">Dashboard Page</h1>
+                <h1 class="mb-0 fw-bold">Dashboard</h1>
             </div>
         </div>
     </div>
@@ -33,10 +33,45 @@
         <!-- Start Page Content -->
         <!-- ============================================================= -->
         <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        Selamat datang di halaman dashboard
+            <div class="col-lg-12">
+                <div class="card-group">
+                    <div class="card">
+                        <div class="card-body">
+                            <span
+                                class="
+                        btn btn-xl btn-light-info
+                        text-info
+                        btn-circle
+                        d-flex
+                        align-items-center
+                        justify-content-center
+                      ">
+                                <i data-feather="grid"></i>
+                            </span>
+                            <h3 class="mt-3 pt-1 mb-0">
+                                {{ $product }}
+                            </h3>
+                            <h6 class="text-muted mb-0 fw-normal">Data Produk</h6>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <span
+                                class="
+                        btn btn-xl btn-light-warning
+                        text-warning
+                        btn-circle
+                        d-flex
+                        align-items-center
+                        justify-content-center
+                      ">
+                                <i data-feather="tag"></i>
+                            </span>
+                            <h3 class="mt-3 pt-1 mb-0">
+                                {{ $product_category }}
+                            </h3>
+                            <h6 class="text-muted mb-0 fw-normal">Kategori Produk</h6>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -19,7 +19,17 @@
             font-weight: 700;
         }
 
+        .card {
+            border-radius: 10px;
+            border: 0px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+        }
+
         footer {
+            /* position: absolute;
+            bottom: 0;
+            left: 0; */
+            width: 100%;
             border-top: 1px solid #000000;
         }
 
@@ -37,22 +47,29 @@
     <div class="container mt-4">
         <h2 class="title">Produk</h2>
 
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.
-                        </p>
-                        <a href="#" class="btn btn-success btn-sm px-3 mt-4">Beli</a>
+        <div class="row mt-4">
+            @forelse ($products as $item)
+                <div class="col-lg-3">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <img class="img-fluid" src="{{ asset('uploads/products/' . $item->thumbnail) }}"
+                                alt="Product Image">
+                            <h5 class="title mt-3"><strong>{{ $item->name }}</strong></h5>
+                            <h5 class="mt-3">
+                                <b><sup>Rp</sup>{{ number_format($item->price, 0, ',', '.') }}</b>
+                            </h5>
+                            <p class="card-text mt-4">{!! $item->description !!}</p>
+                            <a href="#" class="btn btn-success btn-sm px-3 mt-4">Beli</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @empty
+            @endforelse
         </div>
 
     </div>
 
-    <footer class="text-center mt-5 p-3">
+    <footer class="text-center mt-5 p-2">
         <p><b>2019 &copy; PT Majoo Teknologi Indonesia</b></p>
     </footer>
 
